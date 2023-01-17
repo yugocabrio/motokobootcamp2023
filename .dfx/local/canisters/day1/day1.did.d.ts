@@ -7,6 +7,7 @@ export interface _SERVICE {
   'is_even' : ActorMethod<[bigint], boolean>,
   'multiply' : ActorMethod<[bigint, bigint], bigint>,
   'set_counter' : ActorMethod<[bigint], undefined>,
+  'sqrt' : ActorMethod<[bigint, bigint], number>,
   'test_divide' : ActorMethod<[bigint, bigint], boolean>,
   'volume' : ActorMethod<[bigint], bigint>,
 }

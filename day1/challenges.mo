@@ -1,4 +1,6 @@
 import Nat "mo:base/Nat";
+import Float "mo:base/Float";
+import Int "mo:base/Int";
 
 actor {
   // Challenge_1
@@ -41,5 +43,16 @@ actor {
       return true;
     };
     return false;
+  };
+
+  // lecture2_homeworks
+
+  // homework_1
+  // type Hash = Nat32
+  // let hash : (b : Blob) -> Nat32
+
+  // homework_3
+  public func sqrt(x : Int, y : Int) : async Float{
+    return Float.sqrt(Float.add(Float.fromInt(x * y), 10.3));
   };
 }

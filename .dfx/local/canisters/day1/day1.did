@@ -4,6 +4,7 @@ service : {
   is_even: (nat) -> (bool);
   multiply: (nat, nat) -> (nat);
   set_counter: (nat) -> ();
+  sqrt: (int, int) -> (float64);
   test_divide: (nat, nat) -> (bool);
   volume: (nat) -> (nat);
 }
