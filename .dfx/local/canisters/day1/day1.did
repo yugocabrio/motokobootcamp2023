@@ -1,0 +1,4 @@
+service : {
+  change_message: (text) -> (text);
+  see_message: () -> (text) query;
+}
