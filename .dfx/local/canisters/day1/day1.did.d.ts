@@ -1,7 +1,4 @@
 import type { Principal } from '@dfinity/principal';
 import type { ActorMethod } from '@dfinity/agent';
 
-export interface _SERVICE {
-  'change_message' : ActorMethod<[string], string>,
-  'see_message' : ActorMethod<[], string>,
-}
+export interface _SERVICE { 'multiply' : ActorMethod<[bigint, bigint], bigint> }

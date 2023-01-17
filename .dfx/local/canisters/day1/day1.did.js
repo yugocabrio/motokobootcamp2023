@@ -1,7 +1,6 @@
 export const idlFactory = ({ IDL }) => {
   return IDL.Service({
-    'change_message' : IDL.Func([IDL.Text], [IDL.Text], []),
-    'see_message' : IDL.Func([], [IDL.Text], ['query']),
+    'multiply' : IDL.Func([IDL.Nat, IDL.Nat], [IDL.Nat], []),
   });
 };
 export const init = ({ IDL }) => { return []; };
