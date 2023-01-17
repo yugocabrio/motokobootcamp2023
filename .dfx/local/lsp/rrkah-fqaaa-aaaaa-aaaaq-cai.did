@@ -1,5 +1,9 @@
 service : {
+  get_counter: () -> (nat) query;
   hours_to_minutes: (nat) -> (nat);
+  is_even: (nat) -> (bool);
   multiply: (nat, nat) -> (nat);
+  set_counter: (nat) -> ();
+  test_divide: (nat, nat) -> (bool);
   volume: (nat) -> (nat);
 }
