@@ -1,3 +1,5 @@
 service : {
+  hours_to_minutes: (nat) -> (nat);
   multiply: (nat, nat) -> (nat);
+  volume: (nat) -> (nat);
 }

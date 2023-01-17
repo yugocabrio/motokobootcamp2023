@@ -1,3 +1,4 @@
 service : {
   multiply: (nat, nat) -> (nat);
+  volume: (nat) -> (nat);
 }
