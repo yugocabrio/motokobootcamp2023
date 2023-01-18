@@ -1,0 +1,6 @@
+service : {
+  average_array: (vec int) -> (int);
+  count_character: (text, nat32) -> (nat);
+  factorial: (nat) -> (nat);
+  number_of_words: (text) -> (nat);
+}
