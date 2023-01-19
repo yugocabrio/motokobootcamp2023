@@ -42,8 +42,8 @@ actor {
 
     // 4
     public func number_of_words(t : Text) : async Nat {
-    let words = Text.split(t, #char ' ');
-    return Iter.size<Text>(words);
+        let words = Text.split(t, #char ' ');
+        return Iter.size<Text>(words);
     };
 
     // 5
@@ -65,9 +65,9 @@ actor {
     var remain : Nat = 0;
     var string : Text = "";
     while (number > 0) {
-      remain := number % 2;
-      string := string # Nat.toText(remain);
-      number := number / 2;      
+        remain := number % 2;
+        string := string # Nat.toText(remain);
+        number := number / 2;      
     };
     return string;
   }; 

@@ -1,0 +1,16 @@
+service : {
+  blob2text: (blob) -> (opt text);
+  char2nat32: () -> (nat32);
+  check_char: () -> (bool);
+  check_char_variable: (nat32) -> (bool);
+  languages: () -> ();
+  motoko_print: () -> ();
+  one2ten: () -> ();
+  see_equal: (text, text) -> (bool);
+  see_size: (text) -> (nat);
+  test: () -> (bool);
+  test2: () -> (bool);
+  text2blob: (text) -> (blob);
+  text2char: (text) -> (vec nat32);
+  watch_size: (text) -> (nat);
+}
