@@ -4,6 +4,8 @@ import Array "mo:base/Array";
 import Iter "mo:base/Iter";
 import Debug "mo:base/Debug";
 import Nat "mo:base/Nat";
+import Option "mo:base/Option";
+import Bool "mo:base/Bool";
 
 actor {
   // Char reperesents as ''
@@ -140,5 +142,87 @@ actor {
     Debug.print(Nat.toText(array2.size()));
   };
 
+  // Optional Type(?)の使い方
+  // index +=1;が何かよくわからない
+  // name.vals()でname配列からelement取り出してそれが、find_nameの引数と一致しているか。
+  let names : [Text] = ["motoko", "Rust", "Javascript", "C"];
+  public func find_name(name : Text) : async ?Nat {
+    var index : Nat = 0;
+    for (programing_language in names.vals()){
+      if (programing_language == name){
+        return ?index;
+      };
+      index += 1;
+    };
+    return null;
+  };
 
+  // switch使うとnullの処理しやすいよ
+  public func handle_null_value(n : ?Nat) : async Text {
+    switch(n) {
+      // nがnull確認
+      case(null) {
+        return("The argument is null");
+      };
+      case(? something) {
+        return("The argument is " # Nat.toText(something));
+      };
+    };
+  };
+
+  // mo:baseのOptionのfunc get<T>(x : ?T, default : T) : T
+  // Unwraps an optional value, with a default value, i.e. get(?x, d) = x and get(null, d) = d.
+  // Option型をデフォルトにアンラップする
+  // この関数は、入力として ?Nat を受け取り、Nat を返します。しかし、"null "を入力すると、デフォルト値である0が返されます。
+  public func always_return_a_nut(n : ?Nat) : async Nat {
+    return(Option.get(n, 0));
+  };
+
+  // generic Typeの説明です。汎用Typeと名付けました。
+  //public func is_array_size_even<T>(array : [T]) : async Bool {
+  //  let size = array.size();
+  //  if (size % 2 == 0) {
+  //    return true;
+  //  } else {
+  //    return false;
+  //  };
+  //};
+
+  // High Oder functionの例です
+  // func find<X>(array : [X], predicate : X -> Bool) : ?X
+  // Returns the first value in array for which predicate returns true.
+  // If no element satisfies the predicate, returns null.
+  // predicateが引数にとる関数のこと
+  // let f = func でpredicateを書いています。
+    let f = func (n : Nat) : Bool {
+      if (n == 10) {
+        return true
+      } else {
+        return false
+      };
+    };
+
+    public func mystere(array : [Nat]) : async ?Nat {
+        return(Array.find<Nat>(array, f));
+    };
+
+    // func filter<X>(array : [X], predicate : X -> Bool) : [X]
+    // Creates a new array by applying predicate to every element in array,
+    // retaining the elements for which predicate returns true.
+    // day3の例のコード動きません。謎。割愛。
+
+    // func map<X, Y>(array : [X], f : X -> Y) : [Y]
+    // Creates a new array by applying f to each element in array. 
+    // f "maps" each element it is applied to of type X to an element of type Y. 
+    // Retains original ordering of elements.
+    // 配列の各要素にfを適用して、新しい配列を作成。fは新しくできる配列にマップする。
+    let h = func (n : Nat) : Nat {
+      return(n + 1);
+    };
+
+    public func riddle(array : [Nat]) : async [Nat] {
+      return(Array.map<Nat, Nat>(array, h));
+    };
+
+    
 }

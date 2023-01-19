@@ -3,11 +3,15 @@ service : {
   char2nat32: () -> (nat32);
   check_char: () -> (bool);
   check_char_variable: (nat32) -> (bool);
+  find_name: (text) -> (opt nat);
+  handle_null_value: (opt nat) -> (text);
   languages: () -> ();
   motoko_print: () -> ();
   one2ten: () -> ();
   see_equal: (text, text) -> (bool);
   see_size: (text) -> (nat);
+  size_array: () -> ();
+  size_array_via_iter: () -> ();
   test: () -> (bool);
   test2: () -> (bool);
   text2blob: (text) -> (blob);
