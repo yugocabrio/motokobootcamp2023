@@ -30,7 +30,7 @@ module {
     // day2の説明、mutable（可変）はprivate。immutable（不変）はpbulic。
     // shared type is public field of an actor, you can however make it public in a module
 
-    func drop<T>(xs : [T], n : Nat) : [T] {
+    public func drop<T>(xs : [T], n : Nat) : [T] {
         let buffer = Buffer.fromArray<T>(xs);
         let (first, second) = Buffer.split<T>(buffer, n);
         return Buffer.toArray<T>(second);
