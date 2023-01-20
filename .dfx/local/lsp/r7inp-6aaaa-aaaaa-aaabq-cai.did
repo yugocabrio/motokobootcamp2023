@@ -8,7 +8,9 @@ service : {
   handle_null_value: (opt nat) -> (text);
   languages: () -> ();
   motoko_print: () -> ();
+  mystere: (vec nat) -> (opt nat);
   one2ten: () -> ();
+  riddle: (vec nat) -> (vec nat);
   see_equal: (text, text) -> (bool);
   see_size: (text) -> (nat);
   size_array: () -> ();

@@ -8,6 +8,10 @@
       "main": "day2/challenges.mo",
       "type": "motoko"
     },
+    "day3": {
+      "main": "day3/utils.mo",
+      "type": "motoko"
+    },
     "practice_memo": {
       "main": "practice_memo/main.mo",
       "type": "motoko"

@@ -1,4 +1,5 @@
 service : {
+  always_return_a_nut: (opt nat) -> (nat);
   blob2text: (blob) -> (opt text);
   char2nat32: () -> (nat32);
   check_char: () -> (bool);
@@ -7,7 +8,9 @@ service : {
   handle_null_value: (opt nat) -> (text);
   languages: () -> ();
   motoko_print: () -> ();
+  mystere: (vec nat) -> (opt nat);
   one2ten: () -> ();
+  riddle: (vec nat) -> (vec nat);
   see_equal: (text, text) -> (bool);
   see_size: (text) -> (nat);
   size_array: () -> ();
