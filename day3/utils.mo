@@ -1,11 +1,11 @@
 import Int "mo:base/Int";
 import Array "mo:base/Array";
 import Buffer "mo:base/Buffer";
-actor {
+module {
     // 1. create a function called second_maximum that takes an array [Int] of integers and returns the second largest number in the array.
     // Array.sort: func sort<X>(array : [X], compare : (X, X) -> Order.Order) : [X]
     // 大きさ順に並び替える
-    public func second_maximum(array : [Int]) : async Int {
+    public func second_maximum(array : [Int]) : Int {
         let sorted = Array.sort(array, Int.compare);
         return sorted[1];
     };
@@ -15,7 +15,7 @@ actor {
     // func filter<X>(array : [X], predicate : X -> Bool) : [X]
     // Creates a new array by applying predicate to every element in array, retaining the elements for which predicate returns true.
     // 配列内のelementをpredicateに適用させて結果から新しい配列を作成する
-    public func remove_even(array : [Nat]) : async [Nat] {
+    public func remove_even(array : [Nat]) : [Nat] {
         let evenElements = Array.filter<Nat>(array, func x = x % 2 == 1);
         return evenElements;
     };
