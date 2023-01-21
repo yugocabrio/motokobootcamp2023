@@ -1,7 +1,8 @@
 export const idlFactory = ({ IDL }) => {
+  const Book = IDL.Record({ 'title' : IDL.Text, 'pages' : IDL.Nat });
   return IDL.Service({
-    'remove_even' : IDL.Func([IDL.Vec(IDL.Nat)], [IDL.Vec(IDL.Nat)], []),
-    'second_maximum' : IDL.Func([IDL.Vec(IDL.Int)], [IDL.Int], []),
+    'add_book' : IDL.Func([Book], [], []),
+    'get_books' : IDL.Func([], [IDL.Vec(Book)], []),
   });
 };
 export const init = ({ IDL }) => { return []; };

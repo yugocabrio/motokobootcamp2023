@@ -1,7 +1,8 @@
 import type { Principal } from '@dfinity/principal';
 import type { ActorMethod } from '@dfinity/agent';
 
+export interface Book { 'title' : string, 'pages' : bigint }
 export interface _SERVICE {
-  'remove_even' : ActorMethod<[Array<bigint>], Array<bigint>>,
-  'second_maximum' : ActorMethod<[Array<bigint>], bigint>,
+  'add_book' : ActorMethod<[Book], undefined>,
+  'get_books' : ActorMethod<[], Array<Book>>,
 }

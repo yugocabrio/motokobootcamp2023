@@ -1,0 +1,8 @@
+service : {
+  add_username: (text) -> ();
+  get_usernames: () -> (vec record {
+                              principal;
+                              text;
+                            }) query;
+  is_anynomous: () -> (bool);
+}
